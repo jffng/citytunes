@@ -1,0 +1,45 @@
+body {
+	font-family: Monospace;
+	color: #f0f0f0;
+	background-color: #000000;
+	margin: 0px;
+	overflow: hidden;
+}
+
+.info{
+	margin-top: 40px;
+	margin-left: 40px;
+	width: 100%;
+	text-align: left;
+}
+
+#inputBox{
+	margin-left: 40px;
+	margin-top:10px;
+	font-family: Monospace;
+}
+
+#artist{
+	font-size: 18px;
+	margin-top: 40px;
+	margin-left: 40px;
+}
+
+.button{
+	font-family: Monospace;
+	/*width: 250px;
+	height: 50px;
+	line-height: 50px;
+	color:blue;
+	background: yellow;
+	text-align: center;
+	font-size:22px;
+	border: 2px;*/
+}
+
+.soundcloud{
+	position: relative;
+	margin: 40px;
+/*	height: 100px;
+*//*	width: 90%;*/
+}
