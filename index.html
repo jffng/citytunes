@@ -3,7 +3,6 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8"/>
-
 		<link rel="stylesheet" type="text/css" href="style.css"/>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 		<script type="text/javascript" src="http://connect.soundcloud.com/sdk.js"></script>
@@ -11,21 +10,17 @@
 	</head>
 
 	<body>
-		<div id='description' class='info'>
-			City Tunes: <br>
-			A web mashup using EchoNest + SoundCloud APIs.  <br>
-			Search for a city and hear from one of its musical acts. <br>
+		<script type="text/javascript" src="scripts.js"></script>
+		<div id="container">
+			<div id='description' class='info'>
+				<span style="font-size: 48px;"> City Tunes: </span><br><br>
+				Search for a city and hear from one of its musical acts. <br>
+				<input id="inputBox" type="text" placeholder="Type City Name Here"></input>
+				<!-- <button id="sent" class="button">Search</button> -->
+				<br>
+			</div>
+			<div id="artist"></div>
+			<div id="soundcloud" class='soundcloud'></div>
 		</div>
-		<input id="inputBox" type="text"> </input>
-		<button id="sent" class="button">Search</button>
-		<br>
-
-		<div id="artist"></div>
-
-		<div id="soundcloud" class='soundcloud'></div>
-
 	</body>
-
-	<script type="text/javascript" src="scripts.js"></script>
-
 </html>

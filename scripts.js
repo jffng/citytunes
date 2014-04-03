@@ -1,8 +1,16 @@
+var artistData = {};
 
 $(document).ready(function(){
 	console.log("Loaded!");
 	var artist;
+	$('#inputBox').focus();
 
+	$('#inputBox').keypress(function(event) {
+		if(event.keyCode == 13){
+		var inputTerm = $('#inputBox').val();
+		echoNest(inputTerm);
+		}
+	});
 	$('#sent').click(function(){
 		var inputTerm = $('#inputBox').val();
 		echoNest(inputTerm);	
@@ -27,6 +35,7 @@ function echoNest(location){
 			console.log(data);
 			var num = Math.floor(data.response.artists.length*Math.random());
 			if (data.response.artists.length > 0){
+			artistData = data.response;
 			artist = data.response.artists[num].name;
 			console.log(artist);
 			soundcloud(artist, location);
@@ -49,7 +58,7 @@ function soundcloud(searchQuery, location) {
 	  	// console.log(tracks);
 	  	var num = tracks.length*Math.floor(Math.random());
 	  	SC.oEmbed(tracks[num].permalink_url, {
-	  		// maxheight: 100
+		  		maxheight: 200
 	  	},
 	  	document.getElementById('soundcloud'));
 	});
