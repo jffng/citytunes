@@ -6,26 +6,12 @@ body {
 	background-image: url("http://hdwallphotos.com/wp-content/uploads/2014/03/Amsterdam-Canal-Wallpaper-HD-Image.jpg");
 }
 
-#container{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(200,200,200,.8);
-}
-
-.info{
-	text-align: center;
-	margin: 40px;
-}
-
 input {
 	font-family: Arial;
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 50px;
-	width: 400px;
-	height: 50px;
+	margin-top: 40px;
+	width: 50%;
+	height: 25%;
 	    border: 5px solid white; 
     -webkit-box-shadow: 
       inset 0 0 8px  rgba(0,0,0,0.1),
@@ -42,10 +28,35 @@ input {
     font-size: 32px ;
 }
 
+#container{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(200,200,200,.8);
+}
+
+#search{
+/*	display:inline;
+*/	text-align: left;
+/*	margin: 40px;
+*/	font-size: 18px;
+	border-right: thin solid #777777;
+	width: 40%;
+}
+
+#artistinfo{
+	float: right;
+	width: 50%;
+	font-size: 32px;
+
+	text-align: left;
+}
+
 #artist{
+	overflow: hidden;
 	font-size: 18px;
 	margin: 40px;
-	text-align: center;
+	text-align: left;
 }
 
 .button{
@@ -60,8 +71,5 @@ input {
 }
 
 .soundcloud{
-/*	position: relative;
-*/	margin: 40px;
-/*	height: 100px;
-*//*	width: 90%;*/
+margin: 40px;
 }

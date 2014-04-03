@@ -48,7 +48,7 @@ function echoNest(location){
 }
 
 function soundcloud(searchQuery, location) {
-	$('#artist').html('"'+searchQuery+'" hails from '+location+'. ');
+	$('#artistinfo').html('"'+searchQuery+'" hails from '+location+'. ');
 
 	SC.initialize({
 		client_id: 'd2bd4571b734b31bdc4af3044c973837'
@@ -63,7 +63,7 @@ function soundcloud(searchQuery, location) {
 	  	document.getElementById('soundcloud'));
 	});
 
-	$('#artist').append('<button id="playlist" class="button">Generate Playlist</button>');
+	$('#artistinfo').append('<button id="playlist" class="button">Generate Playlist</button>');
 	$('#playlist').click(function(){
 		console.log('playlist generation');
 		playlist(artist);
