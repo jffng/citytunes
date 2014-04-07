@@ -10,7 +10,7 @@ input {
 	font-family: Arial;
 	display: block;
 	margin-top: 40px;
-	width: 50%;
+	width: 75%;
 	height: 25%;
 	    border: 5px solid white; 
     -webkit-box-shadow: 
@@ -46,9 +46,8 @@ input {
 
 #artistinfo{
 	float: right;
-	width: 50%;
+	width: 53%;
 	font-size: 32px;
-
 	text-align: left;
 }
 

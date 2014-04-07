@@ -1,5 +1,3 @@
-var artistData = {};
-
 $(document).ready(function(){
 	console.log("Loaded!");
 	var artist;
@@ -35,15 +33,37 @@ function echoNest(location){
 			console.log(data);
 			var num = Math.floor(data.response.artists.length*Math.random());
 			if (data.response.artists.length > 0){
-			artistData = data.response;
 			artist = data.response.artists[num].name;
-			console.log(artist);
+			artistID = data.response.artists[num].id;
+			console.log(artistID);
+			artistBio(artistID);
 			soundcloud(artist, location);
 			}
 			else{
 			alert("No city / artists found!");
 			}
 		}
+	});
+}
+
+function artistBio(artistID) {
+	$.ajax({
+		url: 'http://developer.echonest.com/api/v4/artist/biographies?api_key=HRUK9I5QKPKDP2GXZ&id='+artistID+'&format=jsonp&results=1&start=0&license=cc-by-sa',
+		type: 'GET',
+		dataType: 'jsonp',
+	})
+	.done(function(data) {
+		console.log("success");
+		var bio = data.response.biographies[0].text;
+		if(bio.length > 255 ) bio = bio.substring(0,900);
+		// console.log(bio+"...");
+		$('#artistinfo').append('<p style="font-size: 16px; display: block">'+bio+'...</p>');
+	})
+	.fail(function() {
+		console.log("error");
+	})
+	.always(function() {
+		console.log("complete");
 	});
 }
 
@@ -58,7 +78,7 @@ function soundcloud(searchQuery, location) {
 	  	// console.log(tracks);
 	  	var num = tracks.length*Math.floor(Math.random());
 	  	SC.oEmbed(tracks[num].permalink_url, {
-		  		maxheight: 200
+		  		maxheight: 212
 	  	},
 	  	document.getElementById('soundcloud'));
 	});
