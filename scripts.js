@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	console.log("Loaded!");
 	var artist;
+	var echonestKey = '';
 	$('#inputBox').focus();
 
 	$('#inputBox').keypress(function(event) {
@@ -17,7 +18,7 @@ $(document).ready(function(){
 
 function echoNest(location){
 	//Write AJAX Code
-	var URL = 'http://developer.echonest.com/api/v4/artist/search?api_key=HRUK9I5QKPKDP2GXZ&format=jsonp&artist_location=';
+	var URL = 'http://developer.echonest.com/api/v4/artist/search?api_key='+echonestKey+'&format=jsonp&artist_location=';
 
 	// ajax method of $ object takes an object of whose properties are many
 	$.ajax({
@@ -48,7 +49,7 @@ function echoNest(location){
 
 function artistBio(artistID) {
 	$.ajax({
-		url: 'http://developer.echonest.com/api/v4/artist/biographies?api_key=HRUK9I5QKPKDP2GXZ&id='+artistID+'&format=jsonp&results=1&start=0&license=cc-by-sa',
+		url: 'http://developer.echonest.com/api/v4/artist/biographies?api_key='+echonestKey+'&id='+artistID+'&format=jsonp&results=1&start=0&license=cc-by-sa',
 		type: 'GET',
 		dataType: 'jsonp',
 	})
